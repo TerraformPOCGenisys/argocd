@@ -6,7 +6,8 @@ replicaCount: 1
 
 image:
   repository: 352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
- 
+  args: ["-c", "npm run dev"]
+  command: ["/bin/sh"]
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: v1
@@ -105,3 +106,6 @@ tolerations: []
 
 affinity: {}
 ContainerName : "frontend-app"
+
+
+docker pull  352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app:v1
