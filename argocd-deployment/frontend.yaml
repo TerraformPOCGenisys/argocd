@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-app
+  namespace: argocd
+  annotations :
+    argocd-image-updater.argoproj.io/image-list: frontend-app=352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
+    argocd-image-updater.argoproj.io/frontend-app.helm.image: image
+    argocd-image-updater.argoproj.io/frontend-app.update-strategy: latest 
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds     
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/dhruv-p-genisys-group/Argocd-Deployment-Config.git'
+    path: argocd-deployment-files
+    targetRevision: main
+    helm:
+      valueFiles:
+        - frontend.yaml
+  destination:
+    name: ''
+    server: 'https://kubernetes.default.svc'
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
