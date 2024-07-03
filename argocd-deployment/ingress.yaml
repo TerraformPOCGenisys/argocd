@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    alb.ingress.kubernetes.io/certificate-arn: 
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:352730764496:certificate/4302a7b9-0ef7-4e05-8e4b-88e89ada1991
     alb.ingress.kubernetes.io/group.name: eks-stag-poc
     alb.ingress.kubernetes.io/healthcheck-port: traffic-port
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
@@ -25,6 +25,6 @@ spec:
           service:
             name: frontend-app
             port:
-              number: 80
+              number: 5173
         path: /
         pathType: Prefix
