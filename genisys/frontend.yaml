@@ -108,4 +108,3 @@ affinity: {}
 ContainerName : "frontend-app"
 
 
-docker pull  352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app:v1
