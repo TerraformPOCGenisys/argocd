@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/TerraformPOCGenisys/argocd.git'
-    path: argocd-deployment-files
+    path: genisys
     targetRevision: main
     helm:
       valueFiles:
