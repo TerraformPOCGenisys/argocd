@@ -11,7 +11,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/dhruv-p-genisys-group/Argocd-Deployment-Config.git'
+    repoURL: 'https://github.com/TerraformPOCGenisys/argocd.git'
     path: argocd-deployment-files
     targetRevision: main
     helm:

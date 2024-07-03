@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
+  repository: nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: v1
+  tag: latest
   env: {}
 imagePullSecrets: []
 nameOverride: "frontend-app"
@@ -50,7 +50,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: xyz.com
+    - host: frontend-app.cirrops.co
       paths:
         - path: /
           pathType: Prefix
