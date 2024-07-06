@@ -6,8 +6,8 @@ replicaCount: 1
 
 image:
   repository: 352730764496.dkr.ecr.ap-south-1.amazonaws.com/backend-app
-  # args: ["-c", "npm run dev"]
-  # command: ["/bin/sh"]
+  args: ["-c", "npm start"]
+  command: ["/bin/sh"]
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: 4
