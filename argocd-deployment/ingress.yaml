@@ -28,3 +28,13 @@ spec:
               number: 5173
         path: /
         pathType: Prefix
+  - host: backend-app.cmrinfo.in
+    http:
+      paths:
+      - backend:
+          service:
+            name: backend-app
+            port:
+              number: 3000
+        path: /
+        pathType: Prefix      
