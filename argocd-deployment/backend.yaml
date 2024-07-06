@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-app
+  namespace: argocd
+  annotations :
+    argocd-image-updater.argoproj.io/image-list: backend-app=352730764496.dkr.ecr.ap-south-1.amazonaws.com/backend-app
+    argocd-image-updater.argoproj.io/backend-app.helm.image: image
+    argocd-image-updater.argoproj.io/backend-app.update-strategy: latest
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds     
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/TerraformPOCGenisys/argocd.git'
+    path: genisys
+    targetRevision: main
+    helm:
+      valueFiles:
+        - backend.yaml
+  destination:
+    name: ''
+    server: 'https://kubernetes.default.svc'
+    namespace: staging
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
