@@ -73,21 +73,21 @@ resources:
     cpu: 150m
     memory: 150Mi
 
-livenessProbe: 
-  exec:
-    command:
-    - curl
-    - localhost:3000
-readinessProbe: 
-  failureThreshold: 3
-  exec:
-    command:
-    - curl
-    - localhost:3000
-  initialDelaySeconds: 5
-  periodSeconds: 5
-  successThreshold: 1
-  timeoutSeconds: 5
+# livenessProbe: 
+#   exec:
+#     command:
+#     - curl
+#     - localhost:3000
+# readinessProbe: 
+#   failureThreshold: 3
+#   exec:
+#     command:
+#     - curl
+#     - localhost:3000
+#   initialDelaySeconds: 5
+#   periodSeconds: 5
+#   successThreshold: 1
+#   timeoutSeconds: 5
 
 autoscaling:
   enabled: false
