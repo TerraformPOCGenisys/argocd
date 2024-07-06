@@ -8,7 +8,7 @@ image:
   command: ["/bin/sh"]
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 14
+  tag: 15
   env: {}
 imagePullSecrets: []
 nameOverride: "frontend-app"
