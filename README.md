@@ -13,12 +13,6 @@ Action Application     permission
 ##### coonection with github
 go to setting -> repository -> add repository
 
-###### now deploy the application
-## login to cluster
-aws eks --region ap-south-1 update-kubeconfig --name eks-stag-poc
-- first create secret in argocd namespace
-kubectl --namespace argocd create secret generic git-creds --from-literal=username=chanduksv --from-literal=password="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"
-
 
 
 ###### deploying application
