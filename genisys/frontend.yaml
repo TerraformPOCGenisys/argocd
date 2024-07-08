@@ -1,6 +1,6 @@
 
 
-replicaCount: 1
+replicaCount: 5
 
 image:
   repository: 352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
@@ -87,9 +87,9 @@ resources:
 #   timeoutSeconds: 3
 
 autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 5
+  enabled: true
+  minReplicas: 5
+  maxReplicas: 6
   targetCPUUtilizationPercentage: 200
   targetMemoryUtilizationPercentage: 200
 
