@@ -87,7 +87,7 @@ resources:
 #   timeoutSeconds: 3
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 5
   maxReplicas: 7
   targetCPUUtilizationPercentage: 200
