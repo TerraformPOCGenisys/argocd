@@ -4,5 +4,5 @@ helm:
     value: 352730764496.dkr.ecr.ap-south-1.amazonaws.com/frontend-app
     forcestring: true
   - name: image.tag
-    value: "17"
+    value: "18"
     forcestring: true
