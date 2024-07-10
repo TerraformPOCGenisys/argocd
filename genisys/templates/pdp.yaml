@@ -1,0 +1,13 @@
+{{- if .Values.pdp.enabled | default false }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "genisys.fullname" . }}
+  labels:
+    {{- include "genisys.labels" . | nindent 4 }}
+spec:
+  minAvailable: {{ .Values.pdp.minAvailable }}
+  selector:
+    matchLabels:
+      name: {{ include "genisys.fullname" . }}
+{{- end }}

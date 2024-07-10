@@ -102,3 +102,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+pdp:
+  enabled: true
+  minAvailable: 1
