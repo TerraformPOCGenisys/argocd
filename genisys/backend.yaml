@@ -90,8 +90,8 @@ resources:
 #   timeoutSeconds: 5
 
 autoscaling:
-  enabled: false
-  minReplicas: 1
+  enabled: true
+  minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 200
   targetMemoryUtilizationPercentage: 200
@@ -109,3 +109,6 @@ affinity: {}
 ContainerName : "backend-app"
 
 
+pdp:
+  enabled: true
+  minAvailable: 1
